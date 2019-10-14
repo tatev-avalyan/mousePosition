@@ -117,49 +117,37 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
-// import './SetTimeOut_SetInterval_requestAnimationFrame/index'
-var div = document.getElementsByTagName('div');
-var red = div[0];
-var black = div[1];
-red.style.border = 'solid';
-red.style.width = '120px';
-red.style.height = '100px';
-red.style.color = 'red';
-red.style.position = 'relative';
-black.style.border = 'solid';
-black.style.width = '120px';
-black.style.height = '100px';
-black.style.color = 'black';
-black.style.position = 'relative';
-black.style.left = '600px';
-black.style.top = '200px';
-document.addEventListener('mousemove', getMousePosition);
+})({"polyndrom/polyndrom.js":[function(require,module,exports) {
+var str1 = 'tatev';
+var str2 = 'abba';
+var str3 = 'argentinamanitnegra';
+var str4 = 'avalyan';
+var str5 = 'madam';
+var newString = [];
+var joined = '';
 
-function getMousePosition(event) {
-  red.style.left = event.screenX + 'px';
-  red.style.top = event.screenY + 'px';
-}
+function reverseString(str) {
+  var reversed = '';
 
-function mouse() {
-  var blackTop1 = parseInt(black.style.top, 10);
-  var blackLeft1 = parseInt(black.style.left, 10); // const blackTop2 = parseInt(black.style.top + 100, 10)
-  // const blackLeft2 = parseInt(black.style.left + 120, 10)
-
-  var redLeft = parseInt(red.style.left);
-  var redTop = parseInt(red.style.top);
-
-  if (redLeft <= blackLeft1 + 120 && redLeft >= blackLeft1 && redTop >= blackTop1 && redTop <= blackTop1 + 100) {
-    red.style.color = 'black';
-  } else {
-    red.style.color = 'red';
+  for (var i = str.length - 1; i >= 0; --i) {
+    reversed += str[i];
   }
 
-  requestAnimationFrame(mouse);
+  return reversed;
 }
 
-mouse();
-},{}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+function isPolyndrom(str) {
+  return str === reverseString(str);
+}
+
+console.log(str4);
+console.warn(isPolyndrom(str4)); // console.warn(reverseString(str2))
+// console.warn(reverseString(str3))
+},{}],"index.js":[function(require,module,exports) {
+"use strict";
+
+require("./polyndrom/polyndrom");
+},{"./polyndrom/polyndrom":"polyndrom/polyndrom.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -187,7 +175,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59878" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65272" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

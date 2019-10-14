@@ -2,4 +2,7 @@
 
 
 //import './RecToRec/RecToRec'
-import './RecToCircle/RecToCircle'
+// import './RecToCircle/RecToCircle'
+// import './RecToRec/RecToRec'
+// import './RecToPoint/RecToPoint'
+import './polyndrom/polyndrom'
